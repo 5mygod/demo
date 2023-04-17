@@ -9,6 +9,9 @@ const buttonSize = (size: ButtonSize) => {
     case "large":
       return css`
         // large type 버튼 스타일
+        padding: 1rem 2rem;
+        font-size: 20px;
+        font-weight: 600;
       `;
 
     case "medium":
@@ -35,7 +38,6 @@ const disabledStyle = css`
 
 const Button = styled(motion.button)<{ size?: ButtonSize; disabled?: boolean }>`
   ${({ size = "medium" }) => buttonSize(size)}
-  padding: .75rem 1.5rem;
   outline: none;
   border-radius: 0.75rem;
   border: none;

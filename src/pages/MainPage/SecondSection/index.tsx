@@ -156,7 +156,7 @@ const SecondSection = () => {
       <ContentContainer ref={contentContainerRef}>
         <TextContainer>
           <Text typography="h2">Motion</Text>
-          <Spacing size={8} mobileSize={12} />
+          <Spacing size={20} mobileSize={12} />
           <Text typography="p">
             Motion 섹션에서는 다양한 애니메이션 모션을 시연합니다.
           </Text>

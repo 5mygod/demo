@@ -121,7 +121,7 @@ const Container = styled.header`
         transform: translateX(-50%);
         left: 50%;
         width: 0%;
-        border-bottom: 0.1875rem solid red;
+        border-bottom: 0.1875rem solid #333;
         border-radius: 0.75rem;
         transition: 0.3s ease-in-out width;
       }
@@ -193,7 +193,7 @@ const Container = styled.header`
         transform: translateX(-50%);
         left: 50%;
         width: 0%;
-        border-bottom: 0.1875rem solid red;
+        border-bottom: 0.1875rem solid #333;
         transition: 0.3s ease-in-out width;
       }
 

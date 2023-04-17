@@ -68,6 +68,7 @@ export const Slider = () => {
       </ControlButtonContainer>
       <Container className="swiper-container">
         <StyledButton
+          type="button"
           className="btn-swipe--left"
           ref={prevButtonRef}
           initial={{
@@ -94,6 +95,7 @@ export const Slider = () => {
           ))}
         </Swiper>
         <StyledButton
+          type="button"
           className="btn-swipe--right"
           ref={nextButtonRef}
           initial={{
