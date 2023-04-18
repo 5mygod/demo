@@ -1,14 +1,14 @@
-import "swiper/swiper.min.css";
 import { useRef } from "react";
 import SwiperCore, { EffectCoverflow, Navigation, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "@emotion/styled";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import { SWIPER_DATA } from "mock";
 import { motion } from "framer-motion";
 import { Mediaqueries } from "styles/mediaqueries";
 import useIsMobileScreen from "hooks/useIsMobile";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/swiper.min.css";
 
 SwiperCore.use([Navigation, Scrollbar]);
 
@@ -45,20 +45,20 @@ export const Slider = () => {
       <ControlButtonContainer>
         {SWIPER_DATA.map((swiperData) => (
           <SwipeControlTab
-            key={swiperData.id}
+            key={`swiper-control-tab-${swiperData.id}`}
             className="swiper-control-tab"
             initial={{
               backgroundColor: "#efefef",
             }}
             whileHover={{ backgroundColor: "#333", color: "#fff" }}
+            onClick={() => {
+              handleSlideChange(swiperData.id);
+            }}
           >
             <input
               type="radio"
               name="swiper-control"
               id={`swipe-card-${swiperData.id}`}
-              onClick={() => {
-                handleSlideChange(swiperData.id);
-              }}
             />
             <motion.label htmlFor={`swipe-card-${swiperData.id}`}>
               {swiperData.name}
@@ -89,7 +89,7 @@ export const Slider = () => {
           {...SwiperConfig}
         >
           {SWIPER_DATA.map((swiperData) => (
-            <SwiperSlide>
+            <SwiperSlide key={`swiper-data-${swiperData.id}`}>
               <SwiperImage src={swiperData.image} />
             </SwiperSlide>
           ))}
@@ -201,6 +201,10 @@ const SwipeControlTab = styled(motion.div)`
 
   & > input {
     display: none;
+  }
+
+  label {
+    cursor: pointer;
   }
 
   &:hover {

@@ -130,17 +130,25 @@ const ThirdSection = () => {
           .fill(0)
           .map((_, index) => (
             <>
-              <VerticalLine className="vertical-line" key={index} />
-              <HorizontalLine className="horizontal-line" key={index} />
+              <VerticalLine
+                className="vertical-line"
+                key={`vertical-line-${index}`}
+              />
+              <HorizontalLine
+                className="horizontal-line"
+                key={`horizontal-line-${index}`}
+              />
             </>
           ))}
       </LineContainer>
       <GallaryContainer className="rwb-gallary-container">
         <Gallary className="rwb-gallary">
-          {Array(IMAGE_COUNT)
+          {Array(IMAGE_COUNT * 3)
             .fill(0)
             .map((_, index) => {
-              const fileName = `/planet_${index + 1}_img-min.jpg`;
+              const fileName = `/planet_${
+                (index % IMAGE_COUNT) + 1
+              }_img-min.jpg`;
               return (
                 <div className="rwb-item-image">
                   <img
@@ -153,7 +161,7 @@ const ThirdSection = () => {
               );
             })}
         </Gallary>
-        <Spacing size={40} />
+        <Spacing size={40} mobileSize={8} />
       </GallaryContainer>
       <ContentContainer ref={contentContainerRef}>
         <Text typography="h2">RWD</Text>
@@ -171,10 +179,8 @@ const ThirdSection = () => {
 const Container = styled(BaseContainer)`
   display: flex;
   position: relative;
-  width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  max-width: 100%;
   min-height: 100vh;
 
   .line {
@@ -236,17 +242,17 @@ const ContentContainer = styled.div`
 const GallaryContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
 
   ${Mediaqueries.모바일} {
     order: 2;
+    margin-right: 0;
   }
 `;
 
 const Gallary = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  flex-wrap: wrap;
-  gap: 12px;
+  column-count: 4;
+  column-gap: 10px;
 
   .rwb-item-image {
     img {
@@ -259,6 +265,7 @@ const Gallary = styled.div`
 
   ${Mediaqueries.모바일} {
     & {
+      column-count: 1;
       display: block;
       order: 2;
       width: 92%;

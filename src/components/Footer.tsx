@@ -19,7 +19,9 @@ const Footer = () => {
           UX 그룹과 WP팀이 어떻게 고객 경험을 혁신하고 있는지 더 알아보세요.
         </h3>
         <Spacing size={32} />
-        <FooterButton size="large">새소식 알림 신청하기</FooterButton>
+        <FooterButton size="large" whileHover={{ backgroundColor: "#333" }}>
+          새소식 알림 신청하기
+        </FooterButton>
       </ContentsContainer>
     </Container>
   );
@@ -97,6 +99,7 @@ const ContentsContainer = styled.div`
 
 const FooterButton = styled(Button)`
   max-width: 300px;
+  margin: 0 auto;
 `;
 
 export default Footer;

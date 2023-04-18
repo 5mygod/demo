@@ -56,7 +56,7 @@ const FirstSection = () => {
               <Curtain
                 color={color}
                 index={index}
-                key={index}
+                key={`BASE_COLORS-${index}`}
                 className="first-section-curtain"
               />
             );
