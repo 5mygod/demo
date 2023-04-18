@@ -21,7 +21,7 @@ const SecondSection = () => {
   const triggerCircleRef = useRef<HTMLDivElement>(null);
   const effectCircleRef = useRef<HTMLDivElement>(null);
   const [triggerCount, setTriggerCount] = useState(1);
-  const [isTriggered, setIsTriggered] = useState(false);
+  const [isTriggered, setIsTriggered] = useState(true);
   const [isAutoPlaying, setIsAutoPlaying] = useState(false);
   const timerRef = useRef(0);
 
@@ -102,8 +102,6 @@ const SecondSection = () => {
   }, []);
 
   const toggleColor = () => {
-    setIsTriggered((prev) => !prev);
-
     if (isTriggered) {
       triggerCircleRef.current?.classList.add("motion-triggered");
       effectCircleRef.current?.classList.add(
@@ -121,9 +119,9 @@ const SecondSection = () => {
         triggerCount >= COLOR_VARIANT_COUNT
           ? INITIAL_COLOR_VARIANT
           : triggerCount + 1;
-
       setTriggerCount(() => _triggerCount);
     }
+    setIsTriggered((prev) => !prev);
   };
 
   const autoToggleColor = () => {
