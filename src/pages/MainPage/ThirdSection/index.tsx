@@ -197,7 +197,7 @@ const Container = styled(BaseContainer)`
   ${Mediaqueries.모바일} {
     flex-direction: column;
     min-height: auto;
-    padding: 5rem 0;
+    padding: 80px 0;
   }
 `;
 
@@ -212,8 +212,8 @@ const VerticalLine = styled.div`
   position: absolute;
   top: 0;
   background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 24px;
-  width: 1px;
+  border-radius: 1.5rem;
+  width: 0.0625rem;
   height: 0%;
 `;
 
@@ -221,9 +221,9 @@ const HorizontalLine = styled.div`
   position: absolute;
   left: 0;
   background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 24px;
+  border-radius: 1.5rem;
   width: 0%;
-  height: 1px;
+  height: 0.0625rem;
 `;
 
 const ContentContainer = styled.div`
@@ -233,10 +233,10 @@ const ContentContainer = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    bottom: 0px;
-    right: 0px;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    bottom: 0rem;
+    right: 0rem;
+    border-top: 0.0625rem solid black;
+    border-right: 0.0625rem solid black;
   }
 
   ${Mediaqueries.모바일} {
@@ -248,7 +248,7 @@ const ContentContainer = styled.div`
 const GallaryContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
+  margin-right: 1.25rem;
 
   ${Mediaqueries.모바일} {
     order: 2;
@@ -258,13 +258,13 @@ const GallaryContainer = styled.div`
 
 const Gallary = styled.div`
   column-count: 4;
-  column-gap: 10px;
+  column-gap: 0.625rem;
 
   .rwb-item-image {
     img {
-      max-width: 120px;
+      max-width: 7.5rem;
       height: auto;
-      border-radius: 12px;
+      border-radius: 0.75rem;
       object-fit: fill;
     }
   }
@@ -275,13 +275,13 @@ const Gallary = styled.div`
       display: block;
       order: 2;
       width: 92%;
-      padding: 0 20px;
-      margin-top: 20px;
+      padding: 0 1.25rem;
+      margin-top: 1.25rem;
     }
 
     .rwb-item-image {
       width: 100%;
-      margin-bottom: 12px;
+      margin-bottom: 0.75rem;
 
       &:last-of-type {
         margin-bottom: 0;
@@ -290,7 +290,7 @@ const Gallary = styled.div`
       img {
         max-width: 100%;
         max-height: 100%;
-        border-radius: 12px;
+        border-radius: 0.75rem;
         object-fit: fill;
       }
     }

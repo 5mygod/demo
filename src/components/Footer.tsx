@@ -29,11 +29,11 @@ const Footer = () => {
 
 const Container = styled.footer`
   width: 100%;
-  min-height: 300px;
+  min-height: 18.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 0;
+  padding: 5rem 0;
   background: linear-gradient(-45deg, #ee7752, #fc9403, #fc5619, #d9310f);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
@@ -89,16 +89,16 @@ const Container = styled.footer`
 const ContentsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 48px;
+  margin-left: 3rem;
 
   ${Mediaqueries.모바일} {
     margin-left: 0;
-    padding: 0 24px;
+    padding: 0 1.5rem;
   }
 `;
 
 const FooterButton = styled(Button)`
-  max-width: 300px;
+  max-width: 18.75rem;
 
   ${Mediaqueries.모바일} {
     margin: 0 auto;

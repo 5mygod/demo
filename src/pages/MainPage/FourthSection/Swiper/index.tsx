@@ -145,7 +145,7 @@ const ControlButtonContainer = styled.div`
   ${Mediaqueries.모바일} {
     margin: 0;
     width: 92%;
-    padding: 24px 0;
+    padding: 1.5rem 0;
     overflow-x: scroll;
   }
 `;
