@@ -109,8 +109,8 @@ const SecondSection = () => {
         `color-variant-${triggerCount}`
       );
     } else {
-      triggerCircleRef.current?.classList.add("motion-triggered");
-      effectCircleRef.current?.classList.add(
+      triggerCircleRef.current?.classList.remove("motion-triggered");
+      effectCircleRef.current?.classList.remove(
         "motion-triggered",
         `color-variant-${triggerCount}`
       );
