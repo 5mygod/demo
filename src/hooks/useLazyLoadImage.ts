@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+type FIXME = any;
+
 export const useLazyLoadImage = () => {
   useEffect(() => {
     document.addEventListener("DOMContentLoaded", function () {
@@ -11,7 +13,7 @@ export const useLazyLoadImage = () => {
         ) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              let lazyImage = entry.target;
+              let lazyImage = entry.target as FIXME;
               lazyImage.src = lazyImage.dataset.src;
               lazyImage.srcset = lazyImage.dataset.srcset;
               lazyImage.classList.remove("lazy");

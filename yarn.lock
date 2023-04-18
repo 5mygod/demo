@@ -488,6 +488,11 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.5.0.tgz#57618e57942a5f0131374a9fdb0167e25a117fdc"
   integrity sha512-bkUDCp8o1MvFO+qxkODcbhSqRa6P2GXgrGZVpt0dCXNW2HCSCqYI0ZoAqEOSAjRWmmlKcYgFvN4B4S+zo/f8kg==
 
+"@types/lozad@^1.16.1":
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/@types/lozad/-/lozad-1.16.1.tgz#fc06f73bfd787a456b0e12a9d83a954b56431400"
+  integrity sha512-wmGW368y1zu9ark/7fMNHdZ/c3wGV7fxoEqtK+V3Dsv2QGQQp34D9elDowuW12zZwxjO9NkNUorqg+D9j1VRGQ==
+
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
