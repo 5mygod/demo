@@ -14,6 +14,7 @@
     "framer-motion": "^10.11.5",
     "gsap": "^3.11.5",
     "lottie-web": "^5.11.0",
+    "lozad": "^1.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",

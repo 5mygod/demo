@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import Button from "components/common/Button";
 import BaseContainer from "components/common/Container";
 import { Spacing } from "components/common/Spacing";
 import { Text } from "components/common/Text";
@@ -7,6 +6,7 @@ import { gsap, Power2 } from "gsap";
 import { SECOND_SECTION_ID } from "hooks/useSectionSelector";
 import { useEffect, useRef } from "react";
 import { Mediaqueries } from "styles/mediaqueries";
+import lozad from "lozad";
 
 const IMAGE_COUNT = 7;
 
@@ -21,6 +21,11 @@ const ThirdSection = () => {
   const horizontalLine2Ref = useRef<HTMLDivElement>(null);
   const horizontalLine3Ref = useRef<HTMLDivElement>(null);
   const horizontalLine4Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = lozad();
+    observer.observe();
+  }, []);
 
   useEffect(() => {
     const timeline = gsap.timeline({
@@ -156,6 +161,7 @@ const ThirdSection = () => {
                     key={fileName}
                     alt={fileName}
                     loading="lazy"
+                    className="lozad"
                   />
                 </div>
               );

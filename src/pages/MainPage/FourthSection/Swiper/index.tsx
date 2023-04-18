@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import SwiperCore, { EffectCoverflow, Navigation, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled from "@emotion/styled";
@@ -9,6 +9,7 @@ import useIsMobileScreen from "hooks/useIsMobile";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/swiper.min.css";
+import lozad from "lozad";
 
 SwiperCore.use([Navigation, Scrollbar]);
 
@@ -17,6 +18,11 @@ export const Slider = () => {
   const prevButtonRef = useRef<HTMLButtonElement>(null);
   const nextButtonRef = useRef<HTMLButtonElement>(null);
   const isMobile = useIsMobileScreen();
+
+  useEffect(() => {
+    const observer = lozad();
+    observer.observe();
+  }, []);
 
   const SwiperConfig = {
     effect: "coverflow" as "coverflow",
@@ -47,10 +53,6 @@ export const Slider = () => {
           <SwipeControlTab
             key={`swiper-control-tab-${swiperData.id}`}
             className="swiper-control-tab"
-            initial={{
-              backgroundColor: "#efefef",
-            }}
-            whileHover={{ backgroundColor: "#333", color: "#fff" }}
             onClick={() => {
               handleSlideChange(swiperData.id);
             }}
@@ -80,6 +82,7 @@ export const Slider = () => {
         >
           <img
             src="/icn-swiper-left.png"
+            className="lozad"
             onClick={() => swiperRef.current.slidePrev()}
           />
         </StyledButton>
@@ -186,28 +189,35 @@ const StyledButton = styled(motion.button)`
 `;
 
 const SwipeControlTab = styled(motion.div)`
-  border-radius: 0.75rem;
-  background-color: #efefef;
-  box-shadow: 0.0625rem 0.0625rem 0.0625rem 0.0625rem rgba(0, 0, 0, 0.1);
-  color: #333;
-  border: none;
-  outline: none;
-  font-weight: 600;
-  font-size: 0.875rem;
-  padding: 0.5rem 0.9375rem;
-  cursor: pointer;
-  margin: 0 0.375rem;
-  white-space: nowrap;
-
   & > input {
     display: none;
   }
 
-  label {
-    cursor: pointer;
+  input:checked + & {
+    background-color: #333;
+    color: #fff;
+    transition: 0.25s ease-in-out all;
   }
 
-  &:hover {
+  input:checked + label {
     background-color: #333;
+    color: #fff;
+    transition: 0.25s ease-in-out all;
+  }
+
+  label {
+    cursor: pointer;
+    border-radius: 0.75rem;
+    background-color: #efefef;
+    box-shadow: 0.0625rem 0.0625rem 0.0625rem 0.0625rem rgba(0, 0, 0, 0.1);
+    color: #333;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.9375rem;
+    cursor: pointer;
+    margin: 0 0.375rem;
+    white-space: nowrap;
   }
 `;

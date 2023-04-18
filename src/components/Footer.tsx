@@ -99,7 +99,10 @@ const ContentsContainer = styled.div`
 
 const FooterButton = styled(Button)`
   max-width: 300px;
-  margin: 0 auto;
+
+  ${Mediaqueries.모바일} {
+    margin: 0 auto;
+  }
 `;
 
 export default Footer;

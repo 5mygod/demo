@@ -21,6 +21,7 @@ const Header = () => {
         trigger: "body",
         start: "top+=100",
         toggleActions: "play none reverse reverse",
+        invalidateOnRefresh: true,
       },
       width: "100%",
       borderRadius: 0,
